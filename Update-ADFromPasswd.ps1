@@ -1,4 +1,4 @@
-# Will add the 4 required POSIX attributes to AD user accounts, taken from a linux passwd file
+# Will add the 4 required POSIX attributes (uidNumber, gidNumber, unixHomeDirectory, and loginShell) to AD user accounts, taken from a linux passwd file
 # Requires Active Directory Module
 # Usage: .\Update-ADFromPasswd.ps1 -FilePath "C:\path\to\passwd"
 
@@ -43,4 +43,5 @@ foreach ($line in $passwdLines) {
         Write-Warning "Failed to update ${samAccountName}: $($_.Exception.Message)"
     }
 }
+
 
