@@ -1,5 +1,4 @@
-# Script will add groups from a linux group file to AD, you must edit the targetou parameter for
-# different divisions
+# Script will add groups from a linux group file to AD, TargetOU points to new AD config, All Users > Groups
 # Parameters - Update these values
 $GroupFilePath = "C:\DropBox\cgdtest.txt"
 $TargetOU = "OU=Groups,OU=All Users,DC=CIT,DC=UCAR,DC=EDU"
@@ -41,3 +40,4 @@ Get-Content $GroupFilePath | ForEach-Object {
     }
 
 }
+
