@@ -2,7 +2,7 @@
 # different divisions
 # Parameters - Update these values
 $GroupFilePath = "C:\DropBox\cgdtest.txt"
-$TargetOU = "OU=User Groups,OU=CGD,OU=Divisions,DC=CIT,DC=UCAR,DC=EDU"
+$TargetOU = "OU=Groups,OU=All Users,DC=CIT,DC=UCAR,DC=EDU"
 
 # Import Active Directory module
 if (!(Get-Module -ListAvailable ActiveDirectory)) {
@@ -39,4 +39,5 @@ Get-Content $GroupFilePath | ForEach-Object {
     catch {
         Write-Error "Failed to create group '$groupName'. Error: $($_.Exception.Message)"
     }
+
 }
